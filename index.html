@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Forms JSON Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔄 Microsoft Forms JSON Editor</h1>
+            <p>นำเข้าไฟล์ JSON จาก Microsoft Forms Backup แล้วแก้ไขแบบฟอร์มได้เหมือนตัวจริง</p>
+            <div style="margin-top: 12px;">
+                <button id="loadSampleBtn" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 13px;">
+                    📋 โหลดตัวอย่าง JSON
+                </button>
+            </div>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+            <h3>ลากไฟล์ JSON หรือคลิกเพื่อเลือกไฟล์</h3>
+            <p style="margin-top: 8px; color: #605e5c;">รองรับไฟล์ .json จาก Microsoft Forms Backup</p>
+            <input type="file" id="fileInput" accept=".json" style="display: none;">
+            <div id="fileInfo"></div>
+        </div>
+
+        <div class="main-content">
+            <div class="form-editor">
+                <div class="form-header">
+                    <div class="copilot-badge">✨ AI Enhanced</div>
+                    <input type="text" class="form-title" id="formTitle" placeholder="ชื่อแบบฟอร์ม">
+                    <div class="form-subtitle" id="formSubtitle">-</div>
+                    <div class="form-metadata" id="formMetadata" style="display: none;">
+                        <div>📅 <span id="metaDate"></span> | 🏢 <span id="metaPlatform"></span></div>
+                        <div>👤 สร้างโดย: <span id="metaCreatedBy"></span></div>
+                    </div>
+                    <textarea class="form-description" id="formDescription" placeholder="คำอธิบายแบบฟอร์ม"></textarea>
+                </div>
+                
+                <div class="questions-container" id="questionsContainer">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📝</div>
+                        <h3>ยังไม่มีคำถาม</h3>
+                        <p>นำเข้าไฟล์ JSON หรือเพิ่มคำถามใหม่</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-header">⚙️ เครื่องมือ</div>
+                <div class="sidebar-content">
+                    <button class="add-question-btn" id="addQuestionBtn">
+                        ➕ เพิ่มคำถาม
+                    </button>
+                    
+                    <div class="question-types">
+                        <button class="question-type-btn" data-type="text">
+                            📝 ข้อความสั้น
+                        </button>
+                        <button class="question-type-btn" data-type="textarea">
+                            📄 ข้อความยาว
+                        </button>
+                        <button class="question-type-btn" data-type="choice">
+                            ⭕ ตัวเลือกเดียว
+                        </button>
+                        <button class="question-type-btn" data-type="checkbox">
+                            ☑️ หลายตัวเลือก
+                        </button>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="questionCount">0</div>
+                            <div class="stat-label">คำถาม</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="requiredCount">0</div>
+                            <div class="stat-label">จำเป็น</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="preview-toggle" id="previewToggle">
+        💾 Export JSON
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
