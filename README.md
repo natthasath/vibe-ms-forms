@@ -1,3 +1,3 @@
 # Vibe MS Forms
 
-Web-based Microsoft Forms JSON editor with drag-and-drop import, visual question builder, metadata editing, and JSON export. Easily backup, edit, and restore Microsoft Forms with an intuitive interface.
+Vibe MS Forms is a web-based Microsoft Forms JSON editor with drag-and-drop import, visual question builder, metadata editing, and JSON export. Effortlessly backup, edit, and restore forms with an intuitive, user-friendly interface.
